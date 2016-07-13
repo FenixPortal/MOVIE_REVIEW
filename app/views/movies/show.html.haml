@@ -3,30 +3,29 @@
     .row
       .col-md-4
         =image_tag @movie.image
-      .col-md-9
-        .table-responsive
-        %table.table
-          %tbody
-            %tr
-              %td
-                %b Title:
-              %td=@movie.title
-            %tr
-              %td
-                %b Description:
-              %td=@movie.description
-            %tr
-              %td
-                %b Movie length:
-              %td=@movie.movie_length
-            %tr
-              %td
-                %b Director:
-              %td= @movie.director
-            %tr
-              %td
-                %b Rating:
-              %td=@movie.rating
+      .table-responsive
+      %table.table
+        %tbody
+          %tr
+            %td
+              %b Title:
+            %td=@movie.title
+          %tr
+            %td
+              %b Description:
+            %td=@movie.description
+          %tr
+            %td
+              %b Movie length:
+            %td=@movie.movie_length
+          %tr
+            %td
+              %b Director:
+            %td= @movie.director
+          %tr
+            %td
+              %b Rating:
+            %td=@movie.rating
 
     = link_to 'Edit', edit_movie_path(@movie)
     \|
