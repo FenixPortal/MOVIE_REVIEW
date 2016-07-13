@@ -3,30 +3,44 @@
     .row
       .col-md-4
         =image_tag @movie.image
-      .table-responsive
-      %table.table
-        %tbody
-          %tr
-            %td
-              %b Title:
-            %td=@movie.title
-          %tr
-            %td
-              %b Description:
-            %td=@movie.description
-          %tr
-            %td
-              %b Movie length:
-            %td=@movie.movie_length
-          %tr
-            %td
-              %b Director:
-            %td= @movie.director
-          %tr
-            %td
-              %b Rating:
-            %td=@movie.rating
-
-    = link_to 'Edit', edit_movie_path(@movie)
-    \|
-    = link_to 'Back', movies_path
+        .star-rating{:"data-score"=>@avg_review}
+        %em="#{@reviews.length} Reviews"
+        .table-responsive
+        %table.table
+          %tbody
+            %tr
+              %td
+                %b Title:
+              %td=@movie.title
+            %tr
+              %td
+                %b Description:
+              %td=@movie.description
+            %tr
+              %td
+                %b Movie length:
+              %td=@movie.movie_length
+            %tr
+              %td
+                %b Director:
+              %td= @movie.director
+            %tr
+              %td
+                %b Rating:
+              %td=@movie.rating
+        =link_to "Write a Review", new_movie_review_path(@movie)
+      .col-md-7.col-md-offset-1
+        %h1.review_title=@movie.title
+        %p=@movie.description
+        -if @reviews.blank?
+          %h3 No reviews just yet, would you like to add the first one!
+          =link_to "Write a Review", new_movie_review_path(@movie), class: "btn btn-warning"
+        -else
+          - @reviews.each do |review|
+            .reviews
+              .star-rating{:"data-score"=>review.rating}
+              %p.comment=review.comment
+              %p.created_at Submitted #{time_ago_in_words(review.created_at)} Ago
+= link_to 'Edit', edit_movie_path(@movie)
+\|
+= link_to 'Back', movies_path
