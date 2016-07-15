@@ -1,0 +1,57 @@
+@import "bootstrap-sprockets"
+@import "bootstrap"
+@import "normalize"
+
+$soft_white: #FAFAFA
+$soft_green: #26AA00
+
+body, html
+  width: 100% !important
+  height: 100% !important
+  font-family: Arial, Tahoma, sans-serif
+
+body
+  height: 100%
+  background: -webkit-linear-gradient(90deg,  #a90329 10%, #6d0019 90%)
+  background:    -moz-linear-gradient(90deg,  #a90329 10%, #6d0019 90%)
+  background:     -ms-linear-gradient(90deg,  #a90329 10%, #6d0019 90%)
+  background:      -o-linear-gradient(90deg,  #a90329 10%, #6d0019 90%)
+  background:         linear-gradient(90deg,  #a90329 10%, #6d0019 90%)
+  font-family: 'Lato', sans-serif
+
+label
+  color: $soft_white
+  font-size: 14px
+  font-family: 'Lato', sans-serif
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+  font-weight: bold
+
+#login_label
+  color: $soft_white
+  font-weight: bold
+
+
+a
+  color: $soft_green
+  font-weight: bold
+  &:hover
+    color: #A90073
+
+.btn
+  font-weight: bold !important
+  font-size:  20px !important
+
+.review_title
+  margin: 0 0 20px 0
+
+.reviews
+  padding: 15px 0
+  border-bottom: 1px solid #EAEAEA
+  .star-rating
+    padding-bottom: 8px

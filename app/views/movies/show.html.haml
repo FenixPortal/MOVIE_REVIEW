@@ -2,7 +2,7 @@
   .panel-body
     .row
       .col-md-4
-        =image_tag @movie.image
+        =image_tag @movie.image.url(:medium)
         .star-rating{:"data-score"=>@avg_review}
         %em="#{@reviews.length} Reviews"
         .table-responsive
